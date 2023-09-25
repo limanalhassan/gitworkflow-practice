@@ -6,5 +6,10 @@ jobs:
   yaml-lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: ibiqlik/action-yamllint@v3
+    - uses: azure/setup-kubectl@v2.0
+    - uses: azure/k8s-lint@v1
+        with:
+            lintType: dryrun
+            manifests: |
+            WeatherFrontend/deployment.yml
+            WeatherFrontend/service.yml
