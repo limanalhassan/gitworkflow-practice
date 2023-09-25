@@ -8,8 +8,8 @@ jobs:
     steps:
     - uses: azure/setup-kubectl@v2.0
     - uses: azure/k8s-lint@v1
-        with:
-            lintType: dryrun
-            manifests: |
-            WeatherFrontend/deployment.yml
-            WeatherFrontend/service.yml
+      with:
+        lintType: dryrun
+        manifests: |
+        WeatherFrontend/deployment.yml
+        WeatherFrontend/service.yml
