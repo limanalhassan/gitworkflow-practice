@@ -10,9 +10,7 @@ jobs:
         - name: step one
           uses: actions/checkout@v2
         - name: step two
-          run: |
-                export ANAME=Liman
-                export BNAME=Alhassan
+          run: export ANAME=Liman
         - name: step three
           run: printenv | sort
 
