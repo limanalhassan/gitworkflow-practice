@@ -9,7 +9,7 @@ jobs:
     - name: Check out code
       uses: actions/checkout@v2  
     - name: Python Linter
-      uses: sunnysid3up/python-linter@main
+      uses: sunnysid3up/python-linter@master
       with:
         source: "src"
         mypy-options: "--ignore-missing-imports --show-error-codes"
