@@ -26,11 +26,6 @@ jobs:
         iac_version: 'v14'
         policy_type: 'aws'
         only_warn: true
-  terraform-plan:
-    runs-on: ubuntu-latest
-    name: terrascan-plan
-    needs: [terrascan_job]
-    steps:
     - uses: hashicorp/setup-terraform@v2
     - run: terraform init
     - id: plan
