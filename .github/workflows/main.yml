@@ -9,10 +9,4 @@ jobs:
     - name: Check out code
       uses: actions/checkout@v2  
     - name: Python Linter
-      uses: sunnysid3up/python-linter@master
-      with:
-        source: "src"
-        mypy-options: "--ignore-missing-imports --show-error-codes"
-        pylint-options: "--rcfile=setup.cfg"
-        isort-options: "-w 100"
-        django: true    
+      uses: davidslusser/actions_python_pylint@v1.0.0   
