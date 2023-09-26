@@ -1,24 +1,14 @@
-name: first git workflow
+name: terraform-lint
 
-on: push
+on: [push, pull_request]
 
 jobs:
-  job1:
-      name: first job
-      runs-on: ubuntu-latest
-      steps:
-        - name: step one
-          uses: actions/checkout@v2
-        - name: step two
-          run: export ANAME=Liman
-        - name: step three
-          run: printenv | sort
+  lint-terraform:
 
-  job2:
-      name: second job
-      runs-on: windows-latest
-      steps:
-        - name: step one
-          uses: actions/checkout@v2
-        - name: step two
-          run: "Get-ChildItem Env: | Sort-Object Name"
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@main
+    - name: Lint Terraform
+      uses: actionshub/terraform-lint@main
